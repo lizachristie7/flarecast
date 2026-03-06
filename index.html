@@ -3,73 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FlareCast</title>
+<title>FlareCast Login</title>
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#E36A6A">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-
-<div class="container">
-
-<h1>FlareCast</h1>
-<p class="tagline">Weather-based pain flare forecast</p>
-
-<!-- Current Flare Risk -->
-<div class="card">
-<h2>Current Flare Risk</h2>
-<div id="weatherResult">
-<p>Loading...</p>
+<div class="container card">
+  <h1>FlareCast Login</h1>
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="emailLogin()">Login</button>
+  <button onclick="googleLogin()">Login with Google</button>
+  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+  <p id="loginMessage"></p>
 </div>
-</div>
-
-<!-- Pain Tracker -->
-<div class="card">
-<h2>Log Your Pain</h2>
-<input type="range" min="0" max="10" value="0" id="painSlider" oninput="updatePainLabel(this.value)">
-<p>Pain Level: <span id="painLabel">0</span>/10</p>
-<button onclick="logPain()">Log Pain</button>
-<p id="painMessage"></p>
-</div>
-
-<!-- Pain Logs Table -->
-<div class="card">
-<h2>Pain Logs</h2>
-<table id="painTable">
-<thead>
-<tr>
-<th>Time</th>
-<th>Level</th>
-<th>Edit</th>
-<th>Delete</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-
-<!-- Combined Chart -->
-<div class="card">
-<h2>Pain Trend</h2>
-<canvas id="combinedChart" width="300" height="350"></canvas>
-</div>
-
-<!-- 7-Day Forecast Chart -->
-<div class="card">
-<h2>7-Day Flare Forecast</h2>
-<canvas id="forecastChart" width="300" height="350"></canvas>
-</div>
-
 <script src="app.js"></script>
-
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js');
-}
-</script>
-
-</div>
 </body>
 </html>
