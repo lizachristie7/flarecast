@@ -1,0 +1,113 @@
+body{
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #FFFBF1 0%, #FFF2D0 100%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.container{
+    width: 95%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1{
+    color: #E36A6A;
+    font-size: 44px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+
+.tagline{
+    color: #6A6A6A;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.card{
+    background: linear-gradient(145deg, #FFF2D0, #FFFBF1);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+#weatherResult{
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+input[type="range"]{
+    width: 100%;
+    margin: 15px 0;
+}
+
+button{
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #E36A6A, #FF7A7A);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+button:hover{
+    background: linear-gradient(135deg, #FF7A7A, #E36A6A);
+}
+
+#painMessage{
+    margin-top: 12px;
+    color: #555;
+    font-weight: 500;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th{
+    background: linear-gradient(135deg, #E36A6A, #FF7A7A);
+    color: white;
+}
+
+td button{
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    background: #6AA6E3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+td button:hover{
+    background: #4D8ACB;
+}
+
+canvas{
+    max-width: 100%;
+    height: 350px !important;
+}
